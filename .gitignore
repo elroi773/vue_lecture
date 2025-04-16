@@ -1,1 +1,27 @@
-/01
+# 폴더 무시
+01/
+02/
+todo/
+
+# Node
+node_modules/
+dist/
+
+# 환경 변수
+.env.local
+.env.*.local
+
+# 로그
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE
+.vscode/
+.idea/
+
+# Mac 시스템
+.DS_Store
+
+# 기타 캐시
+.cache/
