@@ -4,7 +4,22 @@
 </template>
 
 <script>
-import FirstChild from './componets/FirstChild.vue';
+import FirstChild from '@/components/FirstChild.vue'
+export default {
+  components : {
+    FirstChild
+  },
+  provide() { // ①
+    return {
+      message: this.message,
+    };
+  },
+  data() {
+    return {
+      message: 'Hello from Vue JS!',
+    };
+  },
+}
 
 </script>
 
