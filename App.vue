@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <template>
   <div id="app">
     <div class="todo">
@@ -86,4 +85,4 @@
   margin-top: 60px;
 }
 </style>
->>>>>>> 9a07cc7662c755de66acd0a0ab89a4d07f8f7021
+
