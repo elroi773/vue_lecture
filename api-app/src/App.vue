@@ -1,12 +1,16 @@
 <script>
 export default{
   methods:{
-    clickHandler(){
-      alert("click");
-    },
+    onKeyuphandler(event){
+      if(event.keyCode === 13){
+        alert("enter!");
+      }
+      console.log(event.target.value);
+    }
   },
 };
 </script>
 <template>
-  <button v-on:click="clickHandler">클릭</button>
+  <button @click="clickHandler('hello',$event)">클릭</button>
+  <input type="text" v-on:keyup="onKeyuphandler">
 </template>
