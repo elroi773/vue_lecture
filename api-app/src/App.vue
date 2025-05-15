@@ -12,5 +12,6 @@ export default{
 </script>
 <template>
   <button @click="clickHandler('hello',$event)">클릭</button>
-  <input type="text" v-on:keyup="onKeyuphandler">
+  <input type="text" @keyup.enter="onKeyuphandler">
 </template>
+<style></style>
