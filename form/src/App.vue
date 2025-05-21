@@ -4,6 +4,7 @@ export default{
     return {
       uid:"",
       upw:"",
+      selectItem:"cafeLatte",
     };
   },
   methods: {
