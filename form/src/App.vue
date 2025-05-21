@@ -12,29 +12,45 @@ methods 는 변환값이 저장이 안되고 매번 계산됨, computed는 캐�
 계산 결과, 이미지 css js 등 으로 나옴 캐시는 그리고 쿠키는 사용자 정보 로그인 상태, 장바구니, 설정이 나옴  -->
 
 <script>
-export default{
-  data(){
+export default {
+  data() {
     return {
-      firstName:"Gildong",
-      lastName:"Hong",
+      firstName: "Gildong",
+      lastName: "Hong",
     };
   },
-  computed:{ //계산된 속성 
-    fullNameComputed(){ //기존 데이터 기반으로 계산된 값을 만들고 싶을때 사용 템플릿처럼 사용 할 수는 있지만 내부적으로는 함수 처럼 작동
+  computed: {
+    // 계산된 속성
+    fullNameComputed() {
       console.log("fullNameComputed func");
       return `${this.lastName} ${this.firstName}`;
     }
   },
-  methods:{
-    fullName(){
+  methods: {
+    // 일반 메서드
+    fullName() {
       console.log("fullName func");
-      return `${this.lastName} ${this.firstName}`
+      return `${this.lastName} ${this.firstName}`;
     }
   }
 };
-
 </script>
 
 <template>
-  <h1>{{ fullNameConputed }}</h1>
+  <div>
+    <!-- computed 속성 사용 -->
+    <h1>{{ fullNameComputed }}</h1>
+
+    <!-- methods 함수 호출 -->
+    <h2>{{ fullName() }}</h2>
+  </div>
 </template>
+
+<style scoped>
+h1 {
+  color: teal;
+}
+h2 {
+  color: gray;
+}
+</style>
