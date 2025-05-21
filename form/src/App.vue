@@ -4,7 +4,7 @@ export default{
     return {
       uid:"",
       upw:"",
-      selectItem:"cafeLatte",
+      selectItem:"cafeLatte", //초기값
     };
   },
   methods: {
