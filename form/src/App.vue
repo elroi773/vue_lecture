@@ -4,32 +4,56 @@ export default{
     return {
       uid:"",
       upw:"",
-      selectItem:"cafeLatte", //초기값
+      fruits:"",
+      price:0,
     };
   },
-  methods: {
-    onClickhandler(){
-      console.log(this.uid,this.upw);
-      //로그인 
-      if(this.uid.trim() === ""){
-        alert("아이디를 입력해 주세용");
-        return;
+  methods:{
+    onChangeHandler(event){
+      this.uid = event.target.value;
+    },
+    onChangeSelectHandler(event){
+      switch(event.target.value){
+        case 'banana':
+          this.price = 500;
+          break;
+        case 'orange' :
+          this.price = 1000;
+          break;
       }
     },
-  },
+    onSubmitHandler(event){
+      //전송이벤트 취소 
+      event.preventDefault();
+      console.log(this.uid, this.upw);
+    }
+
+  }
 };
 
 </script>
 
 <template>
   <form action="">
-    <input type="text" name = "id" v-model="uid"/>
-    <input type="text" name = "password" v-model="upw"/>
-    <select v-model = "selectItem">
-      <option value="americano">아메리카노</option>
-      <option value="cafeLatter">카페 라떼 </option>
-      <option value="espresso">에소프레소</option>
+    <input type="text" @input = "onChangeHandler"/>
+    {{ uid }}
+    <select v-model="fruits">
+      <option value="">선택하세요</option>
+      <option value="banana">banana</option>
+      <option value="orange">orange</option>
     </select>
-    <button type="button" @click="onClickhandler">클릭</button>
+    <p>가격 : {{ fruits === "banana" ?  "500원" : "1000원"}}</p> <!--삼항 연산자를 사용 -->
+
+    <select v-model="fruits" @change = "onChangeSelectHandler">
+      <option value="">선택하세요</option>
+      <option value="banana">banana</option>
+      <option value="orange">orange</option>
+    </select>
+    <p>가격 : {{ price }}</p>
+  </form>
+  <form action="" @submit = "onSubmitHandler">
+    <input type="text" name="id" v-model="uid"/>
+    <input type="text" name="pw" v-model="upw"/>
+    <button>로그인</button>
   </form>
 </template>
