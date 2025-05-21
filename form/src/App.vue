@@ -31,7 +31,10 @@ export default {
     fullName() {
       console.log("fullName func");
       return `${this.lastName} ${this.firstName}`;
-    }
+    },
+    onClickHandler(){
+      this.lastName="Kim";
+    },
   }
 };
 </script>
@@ -44,6 +47,7 @@ export default {
     <!-- methods 함수 호출 -->
     <h2>{{ fullName() }}</h2>
   </div>
+  <button @click = "onClickHandler">이름 변경</button>
 </template>
 
 <style scoped>
